@@ -1,0 +1,40 @@
+@import "../utils/container";
+@import "../utils/mixins";
+.hero {
+  padding: 50px 0;
+}
+.hero__list {
+  @include flexCenter();
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hero__item {
+  width: 600px;
+  cursor: pointer;
+  @include mediaQuery(768px) {
+    max-width: 500px;
+  }
+}
+.hero__link {
+  @include flexCenter();
+  gap: 15px;
+}
+
+.hero__title {
+  padding-bottom: 10px;
+  @include font(16px, 400, 16px);
+  @include mediaQuery(768px) {
+    @include font(20px, 400, 20px);
+  }
+}
+.hero__text {
+  @include font(10px, 300, 10px);
+  @include mediaQuery(768px) {
+    @include font(12px, 300, 12px);
+  }
+}
+.hero__img {
+  border-radius: 50px 0 50px;
+  width: 120px;
+  height: 120px;
+}

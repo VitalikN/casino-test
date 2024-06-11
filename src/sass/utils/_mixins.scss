@@ -1,0 +1,37 @@
+// mixin media query
+@mixin mediaQuery($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+// mixin animation
+@mixin slideAnimation($name, $startX, $startY, $endX, $endY, $startO, $endO) {
+  @keyframes #{$name} {
+    0% {
+      transform: translate(#{$startX}, #{$startY});
+      opacity: #{$startO};
+    }
+    100% {
+      transform: translate(#{$endX}, #{$endY});
+      opacity: #{$endO};
+    }
+  }
+}
+
+@mixin font($fs: 14px, $fw: 400px, $lh: 14px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh / $fs;
+}
+//
+// mixin centr
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:export {
+  flexCenter: #{mixinStr(flexCenter)};
+  mediaQuery: #{mixinStr(mediaQuery)};
+}

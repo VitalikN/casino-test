@@ -1,0 +1,17 @@
+@import "../utils/container.scss";
+@import "../utils/mixins";
+
+.footer__section {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background: linear-gradient(to right, #011e3a, #170a3d, #011e3a);
+}
+
+.footer__text {
+  @include flexCenter();
+  @include font(18px, 400, 18px);
+}
+.footer__link {
+  padding-left: 10px;
+}

@@ -1,0 +1,36 @@
+@import "../utils/container.scss";
+@import "../utils/mixins";
+
+.header {
+  margin: 0px 20px;
+  border-radius: 50px 0 50px;
+  background: url("../../../public/pers.png") no-repeat,
+    url("../../../public/banner-bg.jpg");
+
+  background-position: center;
+  background-size: cover;
+
+  background-position: bottom left, center;
+  @include mediaQuery(320px) {
+    background-size: 150px 150px, cover;
+  }
+  @include mediaQuery(768px) {
+    background-size: 400px 400px, cover;
+  }
+  @include mediaQuery(1280px) {
+    background-size: 600px 600px, cover;
+  }
+}
+
+.title {
+  padding: 20px;
+  @include flexCenter();
+  @include font(25px, 600, 25px);
+
+  @include mediaQuery(768px) {
+    @include font(45px, 600, 45px);
+  }
+  @include mediaQuery(1280px) {
+    @include font(60px, 600, 60px);
+  }
+}
