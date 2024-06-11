@@ -1,40 +1,36 @@
-@import "../utils/container";
+@import "../utils/container.scss";
 @import "../utils/mixins";
+
 .hero {
-  padding: 50px 0;
-}
-.hero__list {
-  @include flexCenter();
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.hero__item {
-  width: 600px;
-  cursor: pointer;
-  @include mediaQuery(768px) {
-    max-width: 500px;
+  margin: 0px 20px;
+  border-radius: 50px 0 50px;
+  background: url("../../../public/pers.png") no-repeat,
+    url("../../../public/banner-bg.jpg");
+
+  background-position: center;
+  background-size: cover;
+
+  background-position: bottom left, center;
+  @include mediaQuery(320px) {
+    background-size: 150px 150px, cover;
   }
-}
-.hero__link {
-  @include flexCenter();
-  gap: 15px;
+  @include mediaQuery(768px) {
+    background-size: 400px 400px, cover;
+  }
+  @include mediaQuery(1280px) {
+    background-size: 600px 600px, cover;
+  }
 }
 
-.hero__title {
-  padding-bottom: 10px;
-  @include font(16px, 400, 16px);
+.title {
+  padding: 20px;
+  @include flexCenter();
+  @include font(25px, 600, 25px);
+
   @include mediaQuery(768px) {
-    @include font(20px, 400, 20px);
+    @include font(45px, 600, 45px);
   }
-}
-.hero__text {
-  @include font(10px, 300, 10px);
-  @include mediaQuery(768px) {
-    @include font(12px, 300, 12px);
+  @include mediaQuery(1280px) {
+    @include font(60px, 600, 60px);
   }
-}
-.hero__img {
-  border-radius: 50px 0 50px;
-  width: 120px;
-  height: 120px;
 }

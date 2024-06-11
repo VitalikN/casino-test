@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { saira } from "@/utils/fonts";
+import ReduxProvider from "@/redux/ReduxProvider/ReduxProvider";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Casino",
@@ -19,7 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        <main>{children}</main>
+        <ReduxProvider>
+          <main>{children}</main>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
